@@ -86,18 +86,18 @@ public class FilterDialogFragment extends DialogFragment {
                 calendar.get(Calendar.DAY_OF_MONTH));
         dialog.show();
     }
-    @Override
-    public void onStart() {
-        super.onStart();
-        // Mengatur ukuran dialog menjadi lebar penuh dan tinggi sesuai konten
-        Dialog dialog = getDialog();
-        if (dialog != null) {
-            Window window = dialog.getWindow();
-            if (window != null) {
-                // Mengatur lebar dialog menjadi penuh dan tinggi sesuai konten
-                window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
-                window.setGravity(Gravity.BOTTOM); // Mengatur posisi dialog ke bawah
-            }
-        }
-    }
+//    @Override
+//    public void onStart() {
+//        super.onStart();
+//        // Mengatur ukuran dialog menjadi lebar penuh dan tinggi sesuai konten
+//        Dialog dialog = getDialog();
+//        if (dialog != null) {
+//            Window window = dialog.getWindow();
+//            if (window != null) {
+//                // Mengatur lebar dialog menjadi penuh dan tinggi sesuai konten
+//                window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
+//                window.setGravity(Gravity.BOTTOM); // Mengatur posisi dialog ke bawah
+//            }
+//        }
+//    }
 }
