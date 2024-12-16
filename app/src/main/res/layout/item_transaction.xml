@@ -6,14 +6,36 @@
     android:padding="8dp">
 
     <!-- Nomor Referensi -->
-    <TextView
-        android:id="@+id/text_reference_no"
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="No. Ref: RT142401234567890"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        android:textColor="#000000" />
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/text_reference_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No. Ref: RT142401234567890"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="#000000" />
+
+        <!-- Status Transaksi -->
+        <TextView
+            android:id="@+id/text_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="SUCCESS"
+            android:backgroundTint="@color/cardview_dark_background"
+            android:textSize="14sp"
+            android:textStyle="italic"
+            android:textColor="#0762f5"
+            android:padding="4dp"
+            android:gravity="end|right" />
+e
+    </LinearLayout>
+
 
     <!-- Jumlah Transaksi -->
     <TextView
@@ -23,37 +45,35 @@
         android:text="Rp100.000,00"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:textColor="#008000" />
+        android:textColor="#214ba6" />
 
-    <!-- Status Transaksi -->
-    <TextView
-        android:id="@+id/text_status"
+
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="SUCCESS"
-        android:textSize="14sp"
-        android:textStyle="italic"
-        android:textColor="#0762f5"
+        android:orientation="horizontal">
 
-        android:padding="4dp"
-        android:gravity="center" />
+        <TextView
+            android:id="@+id/text_method"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Metode: GOPAY"
+            android:textSize="14sp"
+            android:textColor="#555555" />
 
+        <!-- Tanggal Transaksi -->
+        <TextView
+            android:id="@+id/text_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:text="2024-01-01 08:45:51"
+            android:textSize="12sp"
+            android:textColor="#777777" />
+
+    </LinearLayout>
     <!-- Metode Pembayaran -->
-    <TextView
-        android:id="@+id/text_method"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Metode: GOPAY"
-        android:textSize="14sp"
-        android:textColor="#555555" />
 
-    <!-- Tanggal Transaksi -->
-    <TextView
-        android:id="@+id/text_date"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="2024-01-01 08:45:51"
-        android:textSize="12sp"
-        android:textColor="#777777" />
 
 </LinearLayout>

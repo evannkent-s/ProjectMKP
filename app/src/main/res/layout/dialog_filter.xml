@@ -1,50 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:orientation="vertical"
-    android:padding="1dp">
+    android:padding="16dp"
+    android:gravity="bottom|center_horizontal"
+    android:background="@drawable/rounded_background">
 
     <!-- Tanggal Dari -->
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Dari"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        android:layout_marginBottom="4dp" />
-
-    <TextView
-        android:id="@+id/from_date"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:drawable/edit_text"
-        android:padding="8dp"
-        android:text="Pilih Tanggal"
-        android:textSize="14sp" />
-
-    <!-- Tanggal Sampai -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Sampai"
-        android:textSize="14sp"
+        android:text="Filter Data"
         android:textStyle="bold"
-        android:layout_marginTop="12dp"
-        android:layout_marginBottom="4dp" />
+        android:textSize="18sp"
+        android:layout_marginBottom="5dp"/>
 
-    <TextView
-        android:id="@+id/to_date"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@android:drawable/edit_text"
-        android:padding="8dp"
-        android:text="Pilih Tanggal"
-        android:textSize="14sp" />
+        android:orientation="horizontal"
+        android:layout_marginBottom="12dp">
+
+        <!-- Tanggal Dari -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dari"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginEnd="8dp"
+            android:gravity="center_horizontal" />
+
+        <!-- Tanggal Sampai -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sampai"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:layout_marginStart="8dp"
+            android:paddingStart="150dp"
+            android:gravity="center_horizontal" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="12dp">
+
+        <TextView
+            android:id="@+id/from_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:drawable/edit_text"
+            android:padding="8dp"
+            android:text="Pilih Tanggal"
+            android:textSize="14sp"
+            android:layout_gravity="center_vertical" />
+
+        <TextView
+            android:id="@+id/to_date"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@android:drawable/edit_text"
+            android:padding="8dp"
+            android:text="Pilih Tanggal"
+            android:textSize="14sp"
+            android:layout_gravity="center_vertical" />
+
+
+    </LinearLayout>
+
+
 
     <!-- Pilihan Status -->
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Status Transaksi"
         android:textSize="14sp"
@@ -60,7 +97,7 @@
 
         <Button
             android:id="@+id/status_success"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Success"
@@ -68,7 +105,7 @@
 
         <Button
             android:id="@+id/status_failed"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Failed"
@@ -76,7 +113,7 @@
 
         <Button
             android:id="@+id/status_all"
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="All"
@@ -93,6 +130,7 @@
         android:padding="8dp"
         android:textSize="14sp"
         android:textColor="#FFFFFF"
-        android:backgroundTint="#4CAF50" />
+        android:backgroundTint="#1844a3"
+        android:layout_gravity="bottom|center_horizontal"/>
 
 </LinearLayout>

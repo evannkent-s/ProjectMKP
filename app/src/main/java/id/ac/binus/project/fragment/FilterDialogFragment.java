@@ -1,10 +1,14 @@
 package id.ac.binus.project.fragment;
 
 import android.app.DatePickerDialog;
+import android.app.Dialog;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
@@ -81,5 +85,19 @@ public class FilterDialogFragment extends DialogFragment {
                 calendar.get(Calendar.MONTH),
                 calendar.get(Calendar.DAY_OF_MONTH));
         dialog.show();
+    }
+    @Override
+    public void onStart() {
+        super.onStart();
+        // Mengatur ukuran dialog menjadi lebar penuh dan tinggi sesuai konten
+        Dialog dialog = getDialog();
+        if (dialog != null) {
+            Window window = dialog.getWindow();
+            if (window != null) {
+                // Mengatur lebar dialog menjadi penuh dan tinggi sesuai konten
+                window.setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.WRAP_CONTENT);
+                window.setGravity(Gravity.BOTTOM); // Mengatur posisi dialog ke bawah
+            }
+        }
     }
 }
