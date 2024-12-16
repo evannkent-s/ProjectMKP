@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="1dp">
+
+    <!-- Tanggal Dari -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dari"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="4dp" />
+
+    <TextView
+        android:id="@+id/from_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/edit_text"
+        android:padding="8dp"
+        android:text="Pilih Tanggal"
+        android:textSize="14sp" />
+
+    <!-- Tanggal Sampai -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sampai"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="4dp" />
+
+    <TextView
+        android:id="@+id/to_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/edit_text"
+        android:padding="8dp"
+        android:text="Pilih Tanggal"
+        android:textSize="14sp" />
+
+    <!-- Pilihan Status -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Status Transaksi"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Tombol Status -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/status_success"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Success"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/status_failed"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Failed"
+            android:textSize="12sp" />
+
+        <Button
+            android:id="@+id/status_all"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="All"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <!-- Tombol Terapkan -->
+    <Button
+        android:id="@+id/apply_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Terapkan"
+        android:layout_marginTop="16dp"
+        android:padding="8dp"
+        android:textSize="14sp"
+        android:textColor="#FFFFFF"
+        android:backgroundTint="#4CAF50" />
+
+</LinearLayout>

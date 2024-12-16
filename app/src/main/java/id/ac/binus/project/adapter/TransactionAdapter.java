@@ -7,11 +7,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
-
 import id.ac.binus.project.R;
 import id.ac.binus.project.model.TransactionModel;
 
 public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.ViewHolder> {
+
     private List<TransactionModel> transactionList;
 
     public TransactionAdapter(List<TransactionModel> transactionList) {
@@ -28,9 +28,11 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         TransactionModel transaction = transactionList.get(position);
-        holder.dateTextView.setText(transaction.getDate());
-        holder.statusTextView.setText(transaction.getStatus());
-        holder.amountTextView.setText("Rp " + String.format("%,.2f", transaction.getAmount()));
+        holder.referenceNo.setText(transaction.getReferenceNo());
+        holder.amount.setText(transaction.getAmount());
+        holder.status.setText(transaction.getStatus());
+        holder.method.setText(transaction.getMethod());
+        holder.date.setText(transaction.getDate());
     }
 
     @Override
@@ -38,14 +40,25 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
         return transactionList.size();
     }
 
+
+
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        TextView dateTextView, statusTextView, amountTextView;
+        TextView referenceNo, amount, status, method, date;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            dateTextView = itemView.findViewById(R.id.text_date);
-            statusTextView = itemView.findViewById(R.id.text_status);
-            amountTextView = itemView.findViewById(R.id.text_amount);
+            referenceNo = itemView.findViewById(R.id.text_reference_no);
+            amount = itemView.findViewById(R.id.text_amount);
+            status = itemView.findViewById(R.id.text_status);
+            method = itemView.findViewById(R.id.text_method);
+            date = itemView.findViewById(R.id.text_date);
         }
     }
+
+    public void updateList(List<TransactionModel> newList) {
+        transactionList.clear();
+        transactionList.addAll(newList);
+        notifyDataSetChanged();
+    }
+
 }
