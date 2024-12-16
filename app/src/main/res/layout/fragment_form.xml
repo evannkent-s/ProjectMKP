@@ -1,0 +1,77 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Judul Input -->
+        <EditText
+            android:id="@+id/input_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Judul"
+            android:inputType="text"
+            android:padding="12dp"
+
+            android:layout_marginBottom="16dp" />
+
+        <!-- Harga Input -->
+        <EditText
+            android:id="@+id/input_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Harga"
+            android:inputType="number"
+            android:padding="12dp"
+
+            android:layout_marginBottom="16dp" />
+
+        <!-- Deskripsi Input -->
+        <EditText
+            android:id="@+id/input_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Deskripsi"
+            android:inputType="textMultiLine"
+            android:minHeight="100dp"
+            android:padding="12dp"
+
+            android:layout_marginBottom="16dp" />
+
+        <!-- URL Gambar Input -->
+        <EditText
+            android:id="@+id/input_image_url"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="URL Gambar"
+            android:inputType="textUri"
+            android:padding="12dp"
+
+            android:layout_marginBottom="16dp" />
+
+        <!-- Kategori Input -->
+        <EditText
+            android:id="@+id/input_category"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Kategori"
+            android:inputType="text"
+            android:padding="12dp"
+
+            android:layout_marginBottom="16dp" />
+
+        <!-- Tombol Tambahkan -->
+        <Button
+            android:id="@+id/btn_add"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tambahkan"
+
+            android:textColor="@android:color/white"
+            android:padding="12dp" />
+    </LinearLayout>
+</ScrollView>

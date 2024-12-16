@@ -8,7 +8,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import id.ac.binus.project.fragment.FormFragment;
 import id.ac.binus.project.fragment.HistoryFragment;
+import id.ac.binus.project.fragment.ValidatedFormFragment;
 
 public class MainActivity extends AppCompatActivity {
     @Override
@@ -21,17 +23,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 Fragment selectedFragment = null;
-                switch (item.getItemId()) {
-                    case R.id.nav_history:
-                        selectedFragment = new HistoryFragment();
-                        break;
-                    case R.id.nav_form:
-                        selectedFragment = new FormFragment(); // Replace with your Form Fragment
-                        break;
-                    case R.id.nav_validated_form:
-                        selectedFragment = new ValidatedFormFragment(); // Replace with Validated Form Fragment
-                        break;
+                if (item.getItemId() == R.id.nav_history) {
+                    selectedFragment = new HistoryFragment();
+                } else if (item.getItemId() == R.id.nav_form) {
+                    selectedFragment = new FormFragment();
+                } else if (item.getItemId() == R.id.nav_validated_form) {
+                    selectedFragment = new ValidatedFormFragment();
                 }
+
                 if (selectedFragment != null) {
                     getSupportFragmentManager().beginTransaction()
                             .replace(R.id.fragment_container, selectedFragment)
