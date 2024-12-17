@@ -4,9 +4,10 @@
     <color name="teal_700">#083285</color> <!-- Biru terang -->
     <color name="teal_200">#80D8FF</color> <!-- Biru muda -->
     <color name="white">#FFFFFF</color> <!-- Putih -->
-
+    <color name="blue">#007BFF</color>
     <color name="light_gray">#F5F5F5</color>
     <color name="status_success">#4CAF50</color> <!-- Hijau -->
     <color name="status_failed">#F44336</color> <!-- Merah -->
     <color name="status_cancel">#FFC107</color> <!-- Kuning -->
+    <color name="gray">#9E9E9E</color>
 </resources>

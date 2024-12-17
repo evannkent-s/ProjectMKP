@@ -32,26 +32,22 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
         TransactionModel transaction = transactionList.get(position);
         holder.referenceNo.setText(transaction.getReferenceNo());
         holder.amount.setText(transaction.getAmount());
-        holder.status.setText(transaction.getStatus());
         holder.method.setText(transaction.getMethod());
         holder.date.setText(transaction.getDate());
+        holder.status.setText(transaction.getStatus());
 
-        switch (transaction.getStatus()) {
-            case "Success":
+        switch (transaction.getStatus().toLowerCase()) {
+            case "success":
                 holder.status.setBackgroundResource(R.drawable.bg_status_success);
-                holder.status.setTextColor(holder.itemView.getContext().getResources().getColor(R.color.white));
                 break;
-            case "Failed":
+            case "failed":
                 holder.status.setBackgroundResource(R.drawable.bg_status_failed);
-                holder.status.setTextColor(holder.itemView.getContext().getResources().getColor(R.color.white));
                 break;
-            case "Cancel":
+            case "cancel":
                 holder.status.setBackgroundResource(R.drawable.bg_status_cancel);
-                holder.status.setTextColor(holder.itemView.getContext().getResources().getColor(R.color.white));
                 break;
             default:
-                holder.status.setBackgroundResource(0);
-                holder.status.setTextColor(holder.itemView.getContext().getResources().getColor(R.color.black));
+                holder.status.setBackgroundResource(0); // Default
                 break;
         }
     }

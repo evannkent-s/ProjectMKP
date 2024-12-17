@@ -21,7 +21,7 @@
                 android:layout_height="wrap_content"
                 android:text="Judul"
                 android:textStyle="bold"
-                android:textSize="18sp"
+                android:textSize="30sp"
                 android:layout_marginBottom="4dp" />
 
             <EditText
@@ -40,7 +40,7 @@
                 android:layout_height="wrap_content"
                 android:text="Harga"
                 android:textStyle="bold"
-                android:textSize="18sp"
+                android:textSize="30sp"
                 android:layout_marginBottom="4dp" />
 
             <!-- Box untuk Rp dan Input Harga -->
@@ -81,7 +81,7 @@
                 android:layout_height="wrap_content"
                 android:text="Deskripsi"
                 android:textStyle="bold"
-                android:textSize="18sp"
+                android:textSize="30sp"
                 android:layout_marginBottom="4dp" />
 
             <EditText
@@ -111,7 +111,7 @@
                 android:layout_height="wrap_content"
                 android:text="URL Gambar"
                 android:textStyle="bold"
-                android:textSize="18sp"
+                android:textSize="30sp"
                 android:layout_marginBottom="4dp" />
 
             <EditText
@@ -130,7 +130,7 @@
                 android:layout_height="wrap_content"
                 android:text="Kategori"
                 android:textStyle="bold"
-                android:textSize="18sp"
+                android:textSize="30sp"
                 android:layout_marginBottom="4dp" />
 
             <EditText
