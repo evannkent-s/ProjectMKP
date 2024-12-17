@@ -1,77 +1,143 @@
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp">
 
-    <LinearLayout
+    <!-- ScrollView untuk Form -->
+    <ScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/btn_add">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Input Judul -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Judul"
+                android:textStyle="bold"
+                android:textSize="30sp"
+                android:layout_marginBottom="4dp" />
+
+            <EditText
+                android:id="@+id/input_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Contoh INV.XX"
+                android:inputType="text"
+                android:background="@drawable/border_biru"
+                android:minHeight="48dp"
+                android:padding="12dp"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Input Harga -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Harga"
+                android:textStyle="bold"
+                android:textSize="30sp"
+                android:layout_marginBottom="4dp" />
+
+            <EditText
+                android:id="@+id/input_price"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Contoh INV.XX"
+                android:inputType="numberDecimal"
+                android:background="@drawable/border_biru"
+                android:minHeight="48dp"
+                android:padding="12dp"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Input Deskripsi -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Deskripsi"
+                android:textStyle="bold"
+                android:textSize="30sp"
+                android:layout_marginBottom="4dp" />
+
+            <EditText
+                android:id="@+id/input_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Contoh INV.XX"
+                android:inputType="textMultiLine"
+                android:background="@drawable/border_biru"
+                android:minHeight="100dp"
+                android:padding="12dp"
+                android:layout_marginBottom="4dp" />
+
+            <!-- Sisa Karakter Deskripsi -->
+            <TextView
+                android:id="@+id/description_counter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sisa karakter: 50"
+                android:textSize="14sp"
+                android:textColor="#FF0000"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Input URL Gambar -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="URL Gambar"
+                android:textStyle="bold"
+                android:textSize="30sp"
+                android:layout_marginBottom="4dp" />
+
+            <EditText
+                android:id="@+id/input_image_url"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Contoh INV.XX"
+                android:inputType="textUri"
+                android:background="@drawable/border_biru"
+                android:minHeight="48dp"
+                android:padding="12dp"
+                android:layout_marginBottom="16dp" />
+
+            <!-- Input Kategori -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Kategori"
+                android:textStyle="bold"
+                android:textSize="30sp"
+                android:layout_marginBottom="4dp" />
+
+            <EditText
+                android:id="@+id/input_category"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Contoh INV.XX"
+                android:inputType="text"
+                android:background="@drawable/border_biru"
+                android:minHeight="48dp"
+                android:padding="12dp"
+                android:layout_marginBottom="16dp" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Tombol Tambahkan -->
+    <Button
+        android:id="@+id/btn_add"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:text="Tambahkan"
+        android:background="@drawable/button_blue_rounded"
+        android:backgroundTint="@android:color/transparent"
+        android:textColor="@android:color/white"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="8dp" />
 
-        <!-- Judul Input -->
-        <EditText
-            android:id="@+id/input_title"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Judul (Max 16 karakter, alfanumerik)"
-            android:inputType="text"
-            android:padding="12dp"
-
-            android:layout_marginBottom="16dp" />
-
-        <!-- Harga Input -->
-        <EditText
-            android:id="@+id/input_price"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Harga (Rp 10.000 - Rp 1.000.000)"
-            android:inputType="number"
-            android:padding="12dp"
-
-            android:layout_marginBottom="16dp" />
-
-        <!-- Deskripsi Input -->
-        <EditText
-            android:id="@+id/input_description"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Deskripsi (Max 50 karakter, alfanumerik)"
-            android:inputType="textMultiLine"
-            android:minHeight="100dp"
-            android:padding="12dp"
-
-            android:layout_marginBottom="16dp" />
-
-        <!-- URL Gambar Input -->
-        <EditText
-            android:id="@+id/input_image_url"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="URL Gambar (Harus HTTPS)"
-            android:inputType="textUri"
-            android:padding="12dp"
-
-            android:layout_marginBottom="16dp" />
-
-        <!-- Kategori Input -->
-        <EditText
-            android:id="@+id/input_category"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Kategori (Max 20 karakter, alfanumerik)"
-            android:inputType="text"
-            android:padding="12dp"
-
-            android:layout_marginBottom="16dp" />
-
-        <!-- Tombol Tambahkan -->
-        <Button
-            android:id="@+id/btn_add"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Tambahkan"
-
-            android:textColor="@android:color/white"
-            android:padding="12dp" />
-    </LinearLayout>
-</ScrollView>
+</RelativeLayout>

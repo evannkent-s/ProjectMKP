@@ -49,7 +49,6 @@ public class FormFragment extends Fragment {
             String category = categoryInput.getText().toString();
 
             if (!title.isEmpty() && !price.isEmpty() && !description.isEmpty() && !imageUrl.isEmpty() && !category.isEmpty()) {
-                // Kirim data ke API
                 new SendDataToApiTask().execute(title, price, description, imageUrl, category);
             } else {
                 Toast.makeText(getActivity(), "Semua field harus diisi!", Toast.LENGTH_SHORT).show();
@@ -59,7 +58,7 @@ public class FormFragment extends Fragment {
         return view;
     }
 
-    // AsyncTask untuk melakukan POST request di background thread
+    // AsyncTask untuk melakukan POST request
     private class SendDataToApiTask extends AsyncTask<String, Void, String> {
 
         @Override
@@ -71,14 +70,12 @@ public class FormFragment extends Fragment {
             String category = params[4];
 
             try {
-                // URL API Fake Store
                 URL url = new URL("https://fakestoreapi.com/products");
                 HttpURLConnection connection = (HttpURLConnection) url.openConnection();
                 connection.setRequestMethod("POST");
                 connection.setRequestProperty("Content-Type", "application/json");
                 connection.setDoOutput(true);
 
-                // Buat JSON untuk data produk
                 JSONObject jsonParam = new JSONObject();
                 jsonParam.put("title", title);
                 jsonParam.put("price", Double.parseDouble(price));
@@ -86,7 +83,6 @@ public class FormFragment extends Fragment {
                 jsonParam.put("image", imageUrl);
                 jsonParam.put("category", category);
 
-                // Kirim data ke server
                 OutputStream os = connection.getOutputStream();
                 os.write(jsonParam.toString().getBytes());
                 os.flush();
@@ -100,7 +96,6 @@ public class FormFragment extends Fragment {
                 } else {
                     return "Gagal menambahkan produk. Kode: " + responseCode;
                 }
-
             } catch (Exception e) {
                 Log.e("API_ERROR", "Error: " + e.getMessage());
                 return "Error: " + e.getMessage();
@@ -109,7 +104,6 @@ public class FormFragment extends Fragment {
 
         @Override
         protected void onPostExecute(String result) {
-            // Tampilkan hasil ke user
             Toast.makeText(getActivity(), result, Toast.LENGTH_LONG).show();
             Log.d("API_RESULT", result);
         }

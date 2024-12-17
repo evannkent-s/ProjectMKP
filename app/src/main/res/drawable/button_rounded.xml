@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Background warna biru -->
+    <solid android:color="#007BFF" />
+    <!-- Radius tumpul -->
+    <corners android:radius="8dp" />
+</shape>
