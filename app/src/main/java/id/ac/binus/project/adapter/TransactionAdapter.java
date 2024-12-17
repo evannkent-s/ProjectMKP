@@ -4,6 +4,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
@@ -33,6 +35,25 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionAdapter.
         holder.status.setText(transaction.getStatus());
         holder.method.setText(transaction.getMethod());
         holder.date.setText(transaction.getDate());
+
+        switch (transaction.getStatus()) {
+            case "Success":
+                holder.status.setBackgroundResource(R.drawable.bg_status_success);
+                holder.status.setTextColor(holder.itemView.getContext().getResources().getColor(R.color.white));
+                break;
+            case "Failed":
+                holder.status.setBackgroundResource(R.drawable.bg_status_failed);
+                holder.status.setTextColor(holder.itemView.getContext().getResources().getColor(R.color.white));
+                break;
+            case "Cancel":
+                holder.status.setBackgroundResource(R.drawable.bg_status_cancel);
+                holder.status.setTextColor(holder.itemView.getContext().getResources().getColor(R.color.white));
+                break;
+            default:
+                holder.status.setBackgroundResource(0);
+                holder.status.setTextColor(holder.itemView.getContext().getResources().getColor(R.color.black));
+                break;
+        }
     }
 
     @Override
