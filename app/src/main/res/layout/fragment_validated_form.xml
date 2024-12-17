@@ -21,7 +21,7 @@
                 android:layout_height="wrap_content"
                 android:text="Judul"
                 android:textStyle="bold"
-                android:textSize="30sp"
+                android:textSize="18sp"
                 android:layout_marginBottom="4dp" />
 
             <EditText
@@ -31,7 +31,6 @@
                 android:hint="Contoh INV.XX"
                 android:inputType="text"
                 android:background="@drawable/border_biru"
-                android:minHeight="48dp"
                 android:padding="12dp"
                 android:layout_marginBottom="16dp" />
 
@@ -41,19 +40,40 @@
                 android:layout_height="wrap_content"
                 android:text="Harga"
                 android:textStyle="bold"
-                android:textSize="30sp"
+                android:textSize="18sp"
                 android:layout_marginBottom="4dp" />
 
-            <EditText
-                android:id="@+id/input_price"
+            <!-- Box untuk Rp dan Input Harga -->
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Contoh INV.XX"
-                android:inputType="numberDecimal"
+                android:layout_height="48dp"
                 android:background="@drawable/border_biru"
-                android:minHeight="48dp"
-                android:padding="12dp"
-                android:layout_marginBottom="16dp" />
+                android:layout_marginBottom="16dp">
+
+                <!-- Simbol Rp -->
+                <TextView
+                    android:id="@+id/text_rp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="Rp"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:gravity="center"
+                    android:paddingStart="12dp"
+                    android:paddingEnd="8dp"
+                    android:layout_alignParentStart="true" />
+
+                <!-- Input Harga -->
+                <EditText
+                    android:id="@+id/input_price"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_toEndOf="@id/text_rp"
+                    android:background="@android:color/transparent"
+                    android:hint="10.000"
+                    android:inputType="numberDecimal"
+                    android:padding="12dp" />
+            </RelativeLayout>
 
             <!-- Input Deskripsi -->
             <TextView
@@ -61,14 +81,14 @@
                 android:layout_height="wrap_content"
                 android:text="Deskripsi"
                 android:textStyle="bold"
-                android:textSize="30sp"
+                android:textSize="18sp"
                 android:layout_marginBottom="4dp" />
 
             <EditText
                 android:id="@+id/input_description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Contoh INV.XX"
+                android:hint="Contoh Deskripsi"
                 android:inputType="textMultiLine"
                 android:background="@drawable/border_biru"
                 android:minHeight="100dp"
@@ -91,17 +111,16 @@
                 android:layout_height="wrap_content"
                 android:text="URL Gambar"
                 android:textStyle="bold"
-                android:textSize="30sp"
+                android:textSize="18sp"
                 android:layout_marginBottom="4dp" />
 
             <EditText
                 android:id="@+id/input_image_url"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Contoh INV.XX"
+                android:hint="Contoh URL Gambar"
                 android:inputType="textUri"
                 android:background="@drawable/border_biru"
-                android:minHeight="48dp"
                 android:padding="12dp"
                 android:layout_marginBottom="16dp" />
 
@@ -111,17 +130,16 @@
                 android:layout_height="wrap_content"
                 android:text="Kategori"
                 android:textStyle="bold"
-                android:textSize="30sp"
+                android:textSize="18sp"
                 android:layout_marginBottom="4dp" />
 
             <EditText
                 android:id="@+id/input_category"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Contoh INV.XX"
+                android:hint="Contoh Kategori"
                 android:inputType="text"
                 android:background="@drawable/border_biru"
-                android:minHeight="48dp"
                 android:padding="12dp"
                 android:layout_marginBottom="16dp" />
 
@@ -135,7 +153,6 @@
         android:layout_height="wrap_content"
         android:text="Tambahkan"
         android:background="@drawable/button_blue_rounded"
-        android:backgroundTint="@android:color/transparent"
         android:textColor="@android:color/white"
         android:layout_alignParentBottom="true"
         android:layout_marginTop="8dp" />

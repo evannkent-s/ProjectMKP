@@ -57,7 +57,19 @@ public class ValidatedFormFragment extends Fragment {
         // Add Button Listener
         addButton.setOnClickListener(v -> {
             if (validateInputs()) {
-                Toast.makeText(getActivity(), "Validasi Berhasil, Data Siap Dikirim!", Toast.LENGTH_LONG).show();
+                String title = titleInput.getText().toString();
+                String price = priceInput.getText().toString().replace(".", "");
+                String description = descriptionInput.getText().toString();
+                String imageUrl = imageUrlInput.getText().toString();
+                String category = categoryInput.getText().toString();
+
+                Log.d("VALIDATED_DATA", "Title: " + title +
+                        ", Price: " + price +
+                        ", Description: " + description +
+                        ", Image URL: " + imageUrl +
+                        ", Category: " + category);
+
+                Toast.makeText(getActivity(), "Data berhasil divalidasi!", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -71,31 +83,44 @@ public class ValidatedFormFragment extends Fragment {
         String imageUrl = imageUrlInput.getText().toString();
         String category = categoryInput.getText().toString();
 
+        boolean isValid = true;
+
+        // Validasi Judul
         if (!title.matches("^[a-zA-Z0-9 ]{1,16}$")) {
             titleInput.setError("Judul hanya alfanumerik, max 16 karakter");
-            return false;
+            isValid = false;
         }
 
-        if (!price.matches("^Rp \\d+(\\.\\d{3})*$")) {
-            priceInput.setError("Format harga salah, contoh: Rp 10.000");
-            return false;
+        // Validasi Harga
+        if (!price.matches("^\\d+(\\.\\d{3})*$")) {
+            priceInput.setError("Format harga salah, contoh: 10.000");
+            isValid = false;
+        } else {
+            int priceValue = Integer.parseInt(price.replace(".", ""));
+            if (priceValue < 10000 || priceValue > 1000000) {
+                priceInput.setError("Harga minimal 10.000 dan maksimal 1.000.000");
+                isValid = false;
+            }
         }
 
+        // Validasi Deskripsi
         if (!description.matches("^[a-zA-Z0-9 ]{1,50}$")) {
             descriptionInput.setError("Deskripsi max 50 karakter, alfanumerik");
-            return false;
+            isValid = false;
         }
 
+        // Validasi URL Gambar
         if (!Patterns.WEB_URL.matcher(imageUrl).matches() || !imageUrl.startsWith("https://")) {
             imageUrlInput.setError("URL harus valid dan mulai dengan https://");
-            return false;
+            isValid = false;
         }
 
+        // Validasi Kategori
         if (!category.matches("^[a-zA-Z0-9 ]{1,20}$")) {
             categoryInput.setError("Kategori hanya alfanumerik, max 20 karakter");
-            return false;
+            isValid = false;
         }
 
-        return true;
+        return isValid;
     }
 }
